@@ -27,14 +27,19 @@ describe('Deck', function() {
   it('should be able to have arguments passed in', function() {
     const card2 = new Card(2, 'What is the capitol of Minnesota?', ['Minneapolis', 'Duluth', 'St. Paul'], 'St. Paul');
     const card4 = new Card(4, 'Which country occupies half of South America\'s western coast?', ['Argentina', 'Venezuela', 'Chile'], 'Chile');
-    const deck2 = new Deck([card2, card4])
+    const deck2 = new Deck([card2, card4]);
 
     expect(deck2.cards[0].correctAnswer).to.deep.equal('St. Paul');
     expect(deck2.cards.length).to.deep.equal(2);
   });
 
   it('should be able to count cards', function() {
-    expect(deck.countCards()).to.deep.equal(4)
+    const card2 = new Card(2, 'What is the capitol of Minnesota?', ['Minneapolis', 'Duluth', 'St. Paul'], 'St. Paul');
+    const card4 = new Card(4, 'Which country occupies half of South America\'s western coast?', ['Argentina', 'Venezuela', 'Chile'], 'Chile');
+    const deck2 = new Deck([card2, card4]);
+
+    expect(deck.countCards()).to.deep.equal(4);
+    expect(deck2.countCards()).to.deep.equal(2);
   });
 
 

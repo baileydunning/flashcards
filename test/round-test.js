@@ -9,7 +9,11 @@ const Round = require('../src/round');
 describe('Round', function() {
   let round;
   beforeEach(() => {
-    round = new Round()
+    card1 = new Card(1, 'What does the "R" stand for in Roy G. Biv?', ['red', 'retro', 'razzle dazzle'], 'red');
+    card2 = new Card(2, 'What is the capitol of Minnesota?', ['Minneapolis', 'Duluth', 'St. Paul'], 'St. Paul');
+    card3 = new Card(3, 'Which ocean is the Bermuda Triangle located in?', ['Pacific Ocean', 'Atlantic Ocean', 'Arctic Ocean'], 'Atlantic Ocean');
+    card4 = new Card(4, 'Which country occupies half of South America\'s western coast?', ['Argentina', 'Venezuela', 'Chile'], 'Chile');
+    round = new Round([card1, card2, card3, card4]);
   });
 
   it('should be a function', function() {

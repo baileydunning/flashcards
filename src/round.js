@@ -1,10 +1,9 @@
-const Card = require('../src/card');
 const Turn = require('../src/turn');
 const Deck = require('../src/deck');
 
 class Round {
-  constructor() {
-    this.deck = new Deck();
+  constructor(deck) {
+    this.deck = new Deck(deck);
     this.currentCard = this.deck.cards[0];
     this.turns = 0;
     this.incorrectGuesses = [];

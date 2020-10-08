@@ -80,12 +80,13 @@ describe('Round', function() {
     expect(round.calculatePercentCorrect()).to.deep.equal(25);
   });
 
-  it('should interpolate the correct percentage into the logged statement', function() {
+  it('should end the round', function() {
     round.takeTurn('razzle dazzle');
     round.takeTurn('St. Paul');
     round.takeTurn('Atlantic Ocean');
     round.takeTurn('Chile');
     round.endRound();
     expect(round.calculatePercentCorrect()).to.deep.equal(75);
+    expect(round.active).to.deep.equal(false);
   });
 });

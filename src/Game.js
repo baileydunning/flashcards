@@ -16,10 +16,12 @@ class Game {
       return card = new Card(card.id, card.question, card.answers, card.correctAnswer);
     })
     this.currentRound = new Round(this.cards);
+    this.printMessage(this.cards, this.currentRound);
+    this.printQuestion(this.currentRound);
   };
 
   printMessage(deck, round) {
-      console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
+      console.log(`Welcome to FlashCards! You are playing with ${this.currentRound.deck.countCards()} cards.
 -----------------------------------------------------------------------`)
   }
 

@@ -36,7 +36,9 @@ describe('Round', function() {
     expect(round).to.be.an.instanceof(Round);
   });
 
-  it('')
+  it('should start with no incorrect guesses', function() {
+    expect(round.incorrectGuesses).to.deep.equal([]);
+  });
 
   it('should contain a deck', function(){
     expect(round.deck).to.be.an.instanceof(Deck);
@@ -66,6 +68,12 @@ describe('Round', function() {
   it('should make the next card the current card', function() {
     round.takeTurn('red');
     expect(round.deck.cards[0].id).to.deep.equal(2);
+  });
+
+  it('should remove the card from the deck', function() {
+    expect(round.deck.cards.length).to.deep.equal(4);
+    round.takeTurn('red');
+    expect(round.deck.cards.length).to.deep.equal(3);
   });
 
   it('should evaluate the guess and give feedback', function() {

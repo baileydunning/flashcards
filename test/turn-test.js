@@ -5,16 +5,16 @@ const Turn = require('../src/turn');
 const Card = require('../src/card');
 
 describe('Turn', function() {
+  let turn;
+  beforeEach(() => {
+    turn = new Turn();
+  });
 
   it('should be a function', function() {
-    const turn = new Turn();
-
     expect(Turn).to.be.a('function');
   });
 
   it('should be an instance of Turn', function() {
-    const turn = new Turn();
-
     expect(turn).to.be.an.instanceof(Turn);
   });
 

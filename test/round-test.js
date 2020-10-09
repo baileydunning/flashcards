@@ -46,6 +46,9 @@ describe('Round', function() {
 
   it('should have a current card', function() {
     expect(round.currentCard.id).to.deep.equal(1);
+  });
+
+  it('should make the first card in the deck the current card', function() {
     expect(round.deck.cards[0] === round.currentCard).to.deep.equal(true);
   });
 
